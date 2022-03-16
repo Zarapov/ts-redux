@@ -14,7 +14,7 @@ const Main: React.FC = () => {
                 <h1>Главная</h1>
                 <div className="flex-wrapper">
                     {
-                        items.map(item => <ItemCard key={item.id} src={item.src} text={item.text} />)
+                        items.map(item => <ItemCard key={item.id} id={item.id} src={item.src} text={item.text} />)
                     }
                 </div>
             </div>

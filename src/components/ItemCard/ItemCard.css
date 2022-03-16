@@ -1,4 +1,5 @@
 .item-card{
+    position: relative;
     width:300px;
     height:200px;
     border-radius: 20px;
@@ -9,9 +10,17 @@
     margin: 10px;
     text-align: center;
     transition: transform 500ms;
+    overflow: hidden;
 }
 .item-card:hover{
     transform: scale(1.05);
+}
+.item-card .actions-menu{
+    opacity: 0;
+    transition: 500ms;
+}
+.item-card:hover .actions-menu{
+    opacity: 1;
 }
 .item-card>img{
     height: 70%;
