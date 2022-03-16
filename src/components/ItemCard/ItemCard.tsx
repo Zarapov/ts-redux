@@ -6,7 +6,7 @@ interface IItemCard{
 }
 const ItemCard:React.FC<IItemCard> = ({src,text}) => {
     return(
-        <div>
+        <div className="item-card">
             <img src={process.env.PUBLIC_URL+"/"+src} alt="house"/>
             <span>{text}</span>
         </div>
