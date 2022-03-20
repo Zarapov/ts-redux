@@ -1,0 +1,33 @@
+.modal-wrapper{
+    position: absolute;
+    z-index: 10;
+    background:rgba(100,100,100,0.5);
+    left:0;
+    top:0;
+    height: 100%;
+    width: 100%;
+}
+.modal-window{
+    position: relative;
+    margin: auto;
+    background:#fafafa;
+    z-index: 11;
+    border-radius: 10px;
+    border: #b3b3b3;
+    overflow: hidden;
+    top:50%;
+    transform: translateY(-50%);
+
+}
+.modal-title{
+    height: 10%;
+    background: #dfdfdf;
+    padding:10px;
+}
+.modal-title h2{
+    margin: 0;
+}
+.modal-content{
+    height: 90%;
+    padding: 10px;
+}
