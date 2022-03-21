@@ -18,7 +18,14 @@ const Main: React.FC = () => {
             }
         );
     }
-
+    const onEditHandler = (id:string):void => {
+        showModalWindow(
+            {
+                title:"Редактировать объект",
+                children:<div></div>
+            }
+        )
+    }
     return (
         <>
             <Header/>
@@ -29,7 +36,10 @@ const Main: React.FC = () => {
                         cards.map(card => {
                             return(
                                 <ItemCard key={card.id} id={card.id} src={card.src} text={card.text} onClick={()=>alert(card.id)}>
-                                    <ActionsMenu onDeleteClick={() => onDeleteHandler(card.id)} />
+                                    <ActionsMenu 
+                                        onDeleteClick={() => onDeleteHandler(card.id)}
+                                        onEditClick={()=>onEditHandler(card.id)} 
+                                    />
                                 </ItemCard>
                             )
                         })

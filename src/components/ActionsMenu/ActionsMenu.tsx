@@ -1,20 +1,29 @@
 import React from 'react';
-import { ItemCardAction } from '../../types/cards';
 import "./ActionsMenu.css";
 
 interface IActionsMenu{
-    onDeleteClick:()=>void
+    onDeleteClick:()=>void;
+    onEditClick:()=>void;
 }
 
-const ActionsMenu:React.FC<IActionsMenu> = ({onDeleteClick})=>{
-    const onDeleteHandler=(e:React.MouseEvent)=>{
+const ActionsMenu:React.FC<IActionsMenu> = ({onDeleteClick,onEditClick})=>{
+    const onClickHandler=(e:React.MouseEvent,type:string)=>{
         e.stopPropagation();
-        onDeleteClick();
+        switch(type){
+            case "delete":
+                onDeleteClick();
+                break;
+            case "edit":
+                onEditClick();
+                break;
+            default: return
+        }
+        
     }
     return(
         <div className='actions-menu'>
-            <div className='edit' title="Редактировать"></div>
-            <div className='delete' title="Удалить" onClick={e=>onDeleteHandler(e)}></div>
+            <div className='edit' title="Редактировать" onClick={e=>onClickHandler(e,"edit")}></div>
+            <div className='delete' title="Удалить" onClick={e=>onClickHandler(e,"delete")}></div>
         </div>
     )
 }
