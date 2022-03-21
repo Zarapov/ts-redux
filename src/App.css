@@ -9,3 +9,37 @@ body {
     display: flex;
     flex-wrap: wrap;
 }
+.btn-group{
+    display: flex;
+}
+.btn-group .btn{
+    margin: 10px;
+    flex-shrink: 1;
+}
+.btn{
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background-color: #bdbdbd;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color .15s, border .15s;
+}
+.btn-cancel{
+    background-color: #942020;
+}
+.btn-cancel:hover{
+    border-color: #942020;
+    background-color: #771b1b;
+}
+.btn-confirm{
+    background-color: #2544cc;
+}
+.btn-confirm:hover{
+    border-color: #2544cc;
+    background-color: #1c349c;
+}

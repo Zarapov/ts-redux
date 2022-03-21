@@ -2,8 +2,6 @@ import { IModalWindow, ModalWindowAction, ModalWindowActionTypes } from "../../t
 
 const initialState:IModalWindow = {
     visibility:false,
-    height:"0",
-    width:"0",
     children:null,
     title:null
 }

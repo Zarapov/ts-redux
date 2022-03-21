@@ -1,6 +1,6 @@
 export interface IModalWindow{
-    height:string;
-    width:string;
+    height?:string;
+    width?:string;
     children:React.ReactNode|null;
     visibility?:boolean;
     title?:string|null;

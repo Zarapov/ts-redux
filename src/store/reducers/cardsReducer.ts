@@ -1,10 +1,10 @@
-import { IItemCard, ItemCardActionTypes, ItemCardAction} from "../../types/cards";
+import { IItemCardArrayElement, ItemCardActionTypes, ItemCardAction} from "../../types/cards";
 
-const initialState:IItemCard[]=[
+const initialState:IItemCardArrayElement[]=[
     { src: "images/house.svg", text: "Квартира", id: "1" },
     { src: "images/house.svg", text: "Дача", id: "2" }
 ]
-export const cardsReducer = (state = initialState, action:ItemCardAction):IItemCard[]=>{
+export const cardsReducer = (state = initialState, action:ItemCardAction):IItemCardArrayElement[]=>{
     switch(action.type){
         case ItemCardActionTypes.ADD_ITEM_CARD:
             return [...state,{id:String(Date.now()),src:"images/house.svg",text:"Название"}]

@@ -7,6 +7,7 @@
     height: 100%;
     width: 100%;
 }
+
 .modal-window{
     position: relative;
     margin: auto;
@@ -15,12 +16,22 @@
     border-radius: 10px;
     border: #b3b3b3;
     overflow: hidden;
-    top:50%;
+    top:0;
+    width: fit-content;
     transform: translateY(-50%);
-
+    animation-name: windowDown;
+    animation-duration: .3s;
+    animation-fill-mode: forwards;
+}
+@keyframes windowDown {
+    from {
+        top:0;
+    }
+    to{
+        top:50%;
+    }
 }
 .modal-title{
-    height: 10%;
     background: #dfdfdf;
     padding:10px;
 }
@@ -28,6 +39,5 @@
     margin: 0;
 }
 .modal-content{
-    height: 90%;
     padding: 10px;
 }
