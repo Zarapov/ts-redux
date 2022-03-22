@@ -5,6 +5,12 @@ const initialState:IEditCardDialog = {
     image:""
 }
 
-export const editCardDialogReducer = (state=initialState) => {
-
+export const editCardDialogReducer = (state=initialState,action:EditCardDialogAction):IEditCardDialog => {
+    switch(action.type){
+        case EditCardDialogActionTypes.CHANGE_IMAGE:
+            return {...state,image:action.payload}
+        case EditCardDialogActionTypes.CHANGE_NAME:
+            return {...state,name:action.payload}
+        default: return state
+    }
 }

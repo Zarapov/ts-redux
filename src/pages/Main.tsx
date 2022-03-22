@@ -6,6 +6,7 @@ import { useTypedSelector } from "../hooks/useTypedSelector";
 import ActionsMenu from '../components/ActionsMenu/ActionsMenu';
 import { useActions } from "../hooks/useAction";
 import DeleteDialog from "../components/DeleteDialog/DeleteDialog";
+import EditCardDialog from "../components/EditCardDialog/EditCardDialog";
 const Main: React.FC = () => {
     const cards=useTypedSelector(state=>state.cards);
     const { visibility } = useTypedSelector(state=>state.modalWindow);
@@ -22,7 +23,7 @@ const Main: React.FC = () => {
         showModalWindow(
             {
                 title:"Редактировать объект",
-                children:<div></div>
+                children:<EditCardDialog id={id}/>
             }
         )
     }
@@ -33,12 +34,17 @@ const Main: React.FC = () => {
                 <h1>Главная</h1>
                 <div className="flex-wrapper">
                     {
-                        cards.map(card => {
+                        cards.cardArr.map(id => {
                             return(
-                                <ItemCard key={card.id} id={card.id} src={card.src} text={card.text} onClick={()=>alert(card.id)}>
+                                <ItemCard 
+                                    key={cards.cardObj[id].id} 
+                                    id={cards.cardObj[id].id} 
+                                    src={cards.cardObj[id].src} 
+                                    text={cards.cardObj[id].text} 
+                                    onClick={()=>alert(cards.cardObj[id].id)}>
                                     <ActionsMenu 
-                                        onDeleteClick={() => onDeleteHandler(card.id)}
-                                        onEditClick={()=>onEditHandler(card.id)} 
+                                        onDeleteClick={() => onDeleteHandler(cards.cardObj[id].id)}
+                                        onEditClick={()=>onEditHandler(cards.cardObj[id].id)} 
                                     />
                                 </ItemCard>
                             )

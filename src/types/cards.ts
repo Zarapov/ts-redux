@@ -7,10 +7,16 @@ export interface IItemCard{
     children?:React.ReactNode|null;
     onClick?:()=>void;
 }
-export interface IItemCardArrayElement{
+export interface IItemCardElement{
     id:string;
     src:string;
     text:string;
+}
+export interface IItemCardStore{
+    cardArr:Array<string>;
+    cardObj:{
+        [index:string]:IItemCardElement;
+    };
 }
 export interface IAddCard{
     id?:null;
@@ -21,12 +27,21 @@ export interface IAddCard{
 export enum ItemCardActionTypes{
     ADD_ITEM_CARD = "ADD_ITEM_CARD",
     DELETE_ITEM_CARD = "DELETE_ITEM_CARD",
+    EDIT_ITEM_CARD = "EDIT_ITEM_CARD",
 }
 interface AddItemCardAction{
-    type:ItemCardActionTypes.ADD_ITEM_CARD
+    type:ItemCardActionTypes.ADD_ITEM_CARD,
+    payload:{
+        name:string;
+        image:string;
+    };
 }
 interface DeleteItemCardAction{
     type:ItemCardActionTypes.DELETE_ITEM_CARD,
     payload:string
 }
-export type ItemCardAction = AddItemCardAction | DeleteItemCardAction
+interface EditItemCardAction{
+    type:ItemCardActionTypes.EDIT_ITEM_CARD,
+    payload:IItemCardElement
+}
+export type ItemCardAction = AddItemCardAction | DeleteItemCardAction | EditItemCardAction

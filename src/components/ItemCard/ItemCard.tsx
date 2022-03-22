@@ -3,7 +3,6 @@ import "./ItemCard.css";
 import { IAddCard, IItemCard } from "../../types/cards";
 const ItemCard: React.FC<IAddCard | IItemCard> = (
     { 
-        id = null, 
         src = "images/plus-add.svg", 
         text = "Добавить", 
         children = null,

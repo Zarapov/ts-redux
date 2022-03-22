@@ -1,5 +1,4 @@
 export interface IEditCardDialog{
-    id?:string;
     image:string;
     name:string;
 }
