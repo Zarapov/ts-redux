@@ -1,7 +1,7 @@
 //import { Dispatch } from "react";
-import { ItemCardAction, ItemCardActionTypes, IItemCardElement } from "../../types/cards";
+import { ItemCardAction, ItemCardActionTypes, IItemCardElement, IAddItemPayload } from "../../types/cards";
 
-export const addItemCard = (payload:): ItemCardAction => {
+export const addItemCard = (payload:IAddItemPayload): ItemCardAction => {
     return { type: ItemCardActionTypes.ADD_ITEM_CARD, payload }
 }
 export const deleteItemCard = (id: string): ItemCardAction => {

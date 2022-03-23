@@ -10,7 +10,7 @@ import EditCardDialog from "../components/EditCardDialog/EditCardDialog";
 const Main: React.FC = () => {
     const cards=useTypedSelector(state=>state.cards);
     const { visibility } = useTypedSelector(state=>state.modalWindow);
-    const { showModalWindow, addItemCard, deleteItemCard} = useActions();
+    const { showModalWindow, addItemCard, deleteItemCard, editItemCard} = useActions();
     const onDeleteHandler = (id: string): void => {
         showModalWindow(
             {
@@ -19,10 +19,10 @@ const Main: React.FC = () => {
             }
         );
     }
-    const onEditHandler = (id:string):void => {
+    const onEditHandler = (id?:string):void => {
         showModalWindow(
             {
-                title:"Редактировать объект",
+                title:id?"Редактировать объект":"Добавить объект",
                 children:<EditCardDialog id={id}/>
             }
         )
@@ -50,7 +50,7 @@ const Main: React.FC = () => {
                             )
                         })
                     }
-                    <ItemCard onClick={addItemCard}/>
+                    <ItemCard onClick={()=>onEditHandler()}/>
                 </div>
                 {visibility?<ModalWindow/>:null}
             </div>

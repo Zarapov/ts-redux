@@ -16,7 +16,7 @@ export const cardsReducer = (state = initialState, action:ItemCardAction):IItemC
                     cardArr:[...state.cardArr,id],
                     cardObj:{
                         ...state.cardObj,
-                        [id]:{id:id,src:action.payload.image,text:action.payload.name}
+                        [id]:{id:id,src:action.payload.src,text:action.payload.text}
                     }
                 }
             )

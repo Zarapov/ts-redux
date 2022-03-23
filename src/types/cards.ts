@@ -29,12 +29,13 @@ export enum ItemCardActionTypes{
     DELETE_ITEM_CARD = "DELETE_ITEM_CARD",
     EDIT_ITEM_CARD = "EDIT_ITEM_CARD",
 }
+export interface IAddItemPayload{
+    text:string;
+    src:string;
+}
 interface AddItemCardAction{
     type:ItemCardActionTypes.ADD_ITEM_CARD,
-    payload:{
-        name:string;
-        image:string;
-    };
+    payload:IAddItemPayload;
 }
 interface DeleteItemCardAction{
     type:ItemCardActionTypes.DELETE_ITEM_CARD,
