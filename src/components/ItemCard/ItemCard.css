@@ -1,6 +1,7 @@
 .item-card{
     position: relative;
-    width:300px;
+    flex:1 1 300px;
+    max-width: 300px;
     height:200px;
     border-radius: 20px;
     border: 1px solid #b3b3b3;
@@ -29,4 +30,9 @@
 }
 .item-card>span{
     font-size: 1.5rem;
+}
+@media (hover: none) and (pointer: coarse) {
+    .item-card .actions-menu{
+        opacity: 1;
+    }
 }

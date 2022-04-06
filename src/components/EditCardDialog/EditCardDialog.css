@@ -1,0 +1,23 @@
+.image-change{
+    display: flex;
+    flex-wrap: wrap;
+    width: 90vw;
+    max-width: 600px;
+}
+.image-change>*{
+    flex:1 1 150px;
+    height: 200px;
+}
+.btn-group{
+    justify-content: end;
+}
+.name-input{
+    display: block;
+    width: 50%;
+}
+
+@media (max-width:500px){
+    .name-input{
+        width: 100%;
+    }
+}

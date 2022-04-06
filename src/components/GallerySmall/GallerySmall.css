@@ -1,0 +1,18 @@
+.gallery-grid{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fill,minmax(50px,1fr));
+    grid-template-rows: max-content;
+    overflow-y: auto;
+    padding: 5px;
+}
+.gallery-grid>img{
+    cursor: pointer;
+    width: 100%;
+}
+.gallery-grid>img:hover{
+    filter: brightness(1.3);
+}
+.gallery-grid>img.selected{
+    border:1px solid #000;
+}

@@ -2,7 +2,8 @@ import { IEditCardDialog, EditCardDialogAction, EditCardDialogActionTypes } from
 
 const initialState:IEditCardDialog = {
     name:"",
-    image:""
+    image:"",
+    error:false
 }
 
 export const editCardDialogReducer = (state=initialState,action:EditCardDialogAction):IEditCardDialog => {
@@ -11,6 +12,8 @@ export const editCardDialogReducer = (state=initialState,action:EditCardDialogAc
             return {...state,image:action.payload}
         case EditCardDialogActionTypes.CHANGE_NAME:
             return {...state,name:action.payload}
+        case EditCardDialogActionTypes.SET_INPUT_ERROR:
+            return {...state,error:action.payload}
         default: return state
     }
 }

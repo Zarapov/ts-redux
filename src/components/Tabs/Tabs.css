@@ -1,0 +1,19 @@
+.tabs-block{
+    display: flex;
+    text-align: center;
+    padding: 15px 25px;
+    font-weight: 600;
+    color:#4dc683;
+}
+.tabs-block>*{
+    flex:1 1 auto;
+    cursor: pointer;
+}
+.tabs-block>*:hover{
+    text-decoration: underline;
+}
+.tabs-block .tabs-selected{
+    text-decoration: underline;
+    color:#308155;
+    cursor: default;
+}

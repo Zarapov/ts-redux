@@ -1,0 +1,34 @@
+.profile-button{
+    top:5px;
+    left:15px;
+    position: relative;
+    width:38px;
+    height:38px;
+    text-align: center;
+    background-color: aquamarine;
+    border-radius: 50px;
+    border:1px solid #b3b3b3;
+    cursor: pointer;
+}
+.profile-button>span{
+    line-height: 40px;
+}
+.profile-menu{
+    display: none;
+    cursor: default;
+    background-color: aquamarine;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    left:40px;
+    border: 1px solid #b3b3b3;
+    border-radius: 10px;
+}
+.profile-menu ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.profile-menu.open{
+    display: block;
+}

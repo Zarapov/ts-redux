@@ -1,48 +1,37 @@
 import React from "react";
 
-export interface IItemCard{
-    id:string;
-    src:string;
-    text:string;
-    children?:React.ReactNode|null;
-    onClick?:()=>void;
+export interface IItemCard {
+    id: string;
+    src: string;
+    text: string;
+    children?: React.ReactNode | null;
+    onClick?: () => void;
 }
-export interface IItemCardElement{
-    id:string;
-    src:string;
-    text:string;
+export interface ICardPayload {
+    title: string;
+    image: string;
 }
-export interface IItemCardStore{
-    cardArr:Array<string>;
-    cardObj:{
-        [index:string]:IItemCardElement;
+export interface IItemCardElement extends ICardPayload{
+    id: string;
+}
+export interface IItemCardStore {
+    sort: Array<string>;
+    cards: {
+        [index: string]: IItemCardElement;
     };
 }
-export interface IAddCard{
-    id?:null;
-    src?:null;
-    text?:null;
-    onClick:()=>void;
+export interface IAddCard {
+    id?: null;
+    src?: null;
+    text?: null;
+    onClick: () => void;
 }
-export enum ItemCardActionTypes{
-    ADD_ITEM_CARD = "ADD_ITEM_CARD",
-    DELETE_ITEM_CARD = "DELETE_ITEM_CARD",
-    EDIT_ITEM_CARD = "EDIT_ITEM_CARD",
+export enum ItemCardActionTypes {
+    SET_CARDS_STATE = "SET_CARDS_STATE"
 }
-export interface IAddItemPayload{
-    text:string;
-    src:string;
+
+interface SetCardsStateAction {
+    type: ItemCardActionTypes.SET_CARDS_STATE,
+    card:IItemCardStore
 }
-interface AddItemCardAction{
-    type:ItemCardActionTypes.ADD_ITEM_CARD,
-    payload:IAddItemPayload;
-}
-interface DeleteItemCardAction{
-    type:ItemCardActionTypes.DELETE_ITEM_CARD,
-    payload:string
-}
-interface EditItemCardAction{
-    type:ItemCardActionTypes.EDIT_ITEM_CARD,
-    payload:IItemCardElement
-}
-export type ItemCardAction = AddItemCardAction | DeleteItemCardAction | EditItemCardAction
+export type ItemCardAction = SetCardsStateAction
