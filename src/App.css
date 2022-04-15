@@ -2,7 +2,7 @@ body {
     font-family: 'Trebuchet MS', sans-serif;
     margin:0;
 }
-input{
+input,select{
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -26,6 +26,9 @@ label{
 .flex-wrapper{
     display: flex;
     flex-wrap: wrap;
+}
+.flex-center{
+    justify-content: center;
 }
 .btn-group{
     display: flex;
@@ -66,32 +69,6 @@ label{
     border-color: #2544cc;
     background-color: #1c349c;
 }
-.auth-block{
-    position: relative;
-    margin: auto;
-    top: 25vh;
-    border-radius: 20px;
-    border:1px solid #bdbdbd;
-    box-shadow: 0 0 10px 5px #b3b3b3;
-    width: 100%;
-    max-width: 400px;
-    height: fit-content;
-}
-.auth-dialog{
-    display: flex;
-    flex-direction: column;
-    padding:0 25px;
-}
-.auth-dialog>label{
-    margin-top: 0px;
-    margin-bottom: 5px;
-}
-.auth-dialog input{
-    margin-top:0;
-}
-.auth-dialog>button{
-    margin-bottom:25px;
-}
 .input-error{
     margin-bottom: 0;
     border-color: red;
@@ -102,4 +79,12 @@ label{
 .warning-span{
     color:red;
     font-size: 12px;
+}
+.trashbin{
+    display: inline-block;
+    background: url('./assets/images/trashbin.svg') no-repeat center / 80%;
+    cursor: pointer;
+    height: 25px;
+    width: 25px;
+    vertical-align: bottom;
 }

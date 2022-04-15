@@ -1,0 +1,49 @@
+.payments select{
+    margin-right: 10px;
+}
+.payments .btn-group{
+    justify-content: flex-start;
+}
+.payments .btn-group .btn{
+    flex:0 1 200px;
+}
+.payments{
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px 10px 10px;
+}
+.tariff{
+    margin-top: 10px;
+}
+.tariffs>span{
+    display: block;
+}
+.tariff>div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+.tariffs-table{
+    width: 100%;
+    border:none;
+    border-collapse: collapse;
+}
+.tariffs-table div.trashbin{
+    visibility: hidden;
+}
+.tariffs-table tbody tr:hover div.trashbin{
+    visibility: visible;
+}
+.tariffs-table td {
+    text-align:center;
+}
+.tariffs-table tbody tr{
+    cursor: pointer;
+}
+.tariffs-table tbody tr:nth-child(2n){
+    background-color: #bcbcbc;
+}
+.tariffs-table tbody tr:hover{
+    background-color: #848484;
+}

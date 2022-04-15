@@ -1,18 +1,16 @@
 import React, { useEffect } from "react";
-import Header from "../components/Header/Header";
-import ItemCard from "../components/ItemCard/ItemCard";
-import ModalWindow from "../components/ModalWindow/ModalWindow";
-import { useTypedSelector } from "../hooks/useTypedSelector";
-import ActionsMenu from '../components/ActionsMenu/ActionsMenu';
-import { useActions } from "../hooks/useAction";
-import DeleteDialog from "../components/DeleteDialog/DeleteDialog";
-import EditCardDialog from "../components/EditCardDialog/EditCardDialog";
+import Header from "../../components/Header/Header";
+import ItemCard from "../../components/ItemCard/ItemCard";
+import { useTypedSelector } from "../../hooks/useTypedSelector";
+import ActionsMenu from '../../components/ActionsMenu/ActionsMenu';
+import { useActions } from "../../hooks/useAction";
+import ConfirmDialog from "../../components/ConfirmDialog/ConfirmDialog";
+import EditCardDialog from "../../components/EditCardDialog/EditCardDialog";
 import { useNavigate } from "react-router-dom";
-
+import "./Main.css";
 const Main: React.FC = () => {
     const cards = useTypedSelector(state => state.cards);
-    const { visibility } = useTypedSelector(state => state.modalWindow);
-    const images = useTypedSelector(store=>store.cardImages);
+    const images = useTypedSelector(store => store.cardImages);
     const nagivate = useNavigate();
     const { showModalWindow, deleteItemCard, getItemCards } = useActions();
     useEffect(() => {
@@ -24,7 +22,10 @@ const Main: React.FC = () => {
         showModalWindow(
             {
                 title: "Удалить объект?",
-                children: <DeleteDialog deleteFC={() => deleteItemCard(id)} />
+                children: <ConfirmDialog
+                    confirmFC={() => deleteItemCard(id)}
+                    confirmText="Удалить"
+                />
             }
         );
     }
@@ -48,7 +49,7 @@ const Main: React.FC = () => {
                                 <ItemCard
                                     key={id}
                                     id={cards.cards[id].id}
-                                    src={process.env.REACT_APP_CARD_IMAGES_PATH+cards.cards[id].image}
+                                    src={process.env.REACT_APP_CARD_IMAGES_PATH + cards.cards[id].image}
                                     text={cards.cards[id].title}
                                     onClick={() => nagivate('/details', { state: { id } })}
                                 >
@@ -62,7 +63,6 @@ const Main: React.FC = () => {
                     }
                     <ItemCard onClick={() => onEditHandler()} />
                 </div>
-                {visibility ? <ModalWindow /> : null}
             </div>
         </>
     )

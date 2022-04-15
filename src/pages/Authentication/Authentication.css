@@ -1,0 +1,26 @@
+.auth-block{
+    position: relative;
+    margin: auto;
+    top: 25vh;
+    border-radius: 20px;
+    border:1px solid #bdbdbd;
+    box-shadow: 0 0 10px 5px #b3b3b3;
+    width: 100%;
+    max-width: 400px;
+    height: fit-content;
+}
+.auth-dialog{
+    display: flex;
+    flex-direction: column;
+    padding:0 25px;
+}
+.auth-dialog>label{
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+.auth-dialog input{
+    margin-top:0;
+}
+.auth-dialog>button{
+    margin-bottom:25px;
+}

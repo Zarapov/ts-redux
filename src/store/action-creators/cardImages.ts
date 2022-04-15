@@ -1,6 +1,6 @@
 import { CardImagesActions, CardImagesActionTypes } from '../../types/cardImages';
 import { Dispatch } from 'react';
-import userService from '../../services/user.service';
+import userService from '../../services/cards.service';
 
 export const getCardImages = () =>
     (dispatch: Dispatch<CardImagesActions>) => {

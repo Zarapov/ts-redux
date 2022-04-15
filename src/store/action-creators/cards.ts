@@ -1,6 +1,6 @@
 import { ItemCardAction, ItemCardActionTypes, ICardPayload } from "../../types/cards";
 import { Dispatch } from "react";
-import userService from "../../services/user.service";
+import userService from "../../services/cards.service";
 
 export const getItemCards = () =>
     (dispatch: Dispatch<ItemCardAction>) => {

@@ -1,23 +1,25 @@
 import React from 'react';
 import { useActions } from '../../hooks/useAction';
-interface IDeleteDialog{
-    deleteFC:()=>void;
+import "./ConfirmDialog.css";
+interface IConfirmDialog{
+    confirmFC:()=>void;
+    confirmText?:string;
 }
-const DeleteDialog: React.FC<IDeleteDialog> = ({deleteFC}) => {
+const ConfirmDialog: React.FC<IConfirmDialog> = ({confirmFC,confirmText="Подтвердить"}) => {
     const {hideModalWindow} = useActions();
     return (
-        <div className="btn-group">
+        <div className="btn-group confirm-dialog">
             <button type="button" className="btn btn-cancel" onClick={hideModalWindow}>Отмена</button>
             <button
                 type="button"
                 className="btn btn-confirm"
                 onClick={() => {
-                    deleteFC();
+                    confirmFC();
                     hideModalWindow();
                 }}>
-                Удалить
+                {confirmText}
             </button>
         </div>
     )
 }
-export default DeleteDialog;
+export default ConfirmDialog;
