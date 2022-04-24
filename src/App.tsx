@@ -14,7 +14,7 @@ const App: React.FC = () => {
   const { visibility } = useTypedSelector(state => state.modalWindow);
   useEffect(() => {
     getCardImages();
-  })
+  },[])
   return (
     <>
       <Routes>

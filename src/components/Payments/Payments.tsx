@@ -57,7 +57,7 @@ const Payments: React.FC<{ id: string }> = ({ id }) => {
                     confirmFC={/* () => setData(prev => {return { ...prev, [textDate]: newData }}) */
                         () => paymentsService.addPaymentData(id, newData)
                             .then(
-                                res => alert("ok")//setData(res.state)
+                                res => setData(res.state)
                             )
                             .catch(err => alert(err))
                     }
@@ -68,7 +68,7 @@ const Payments: React.FC<{ id: string }> = ({ id }) => {
         //setData(prev => { return { ...prev, [textDate]: newData } });
         paymentsService.addPaymentData(id, newData)
             .then(
-                res => alert("ok")//setData(res.state)
+                res => setData(res.state)
             )
             .catch(err => alert(err))
     }
